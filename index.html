@@ -19,22 +19,7 @@
             min-height: 100vh; padding: 60px 20px; overflow-y: auto; display: flex; flex-direction: column; align-items: center;
         }
 
-        /* LOGO DI POJOK KIRI ATAS */
-        .brand-logo {
-            position: fixed;
-            top: 25px;
-            left: 25px;
-            width: 80px; /* Ukuran bisa disesuaikan */
-            height: 80px;
-            z-index: 1000;
-            filter: drop-shadow(0 0 15px rgba(96, 165, 250, 0.5));
-            transition: transform 0.3s ease;
-        }
-        .brand-logo:hover {
-            transform: scale(1.1) rotate(5deg);
-        }
-
-        /* NOTIFIKASI CUSTOM TOAST */
+        /* NOTIFIKASI KITA SENDIRI (CUSTOM TOAST) */
         #notification-container {
             position: fixed; top: 20px; right: 20px; z-index: 10000;
             display: flex; flex-direction: column; gap: 10px;
@@ -96,13 +81,10 @@
 </head>
 <body>
 
-    <img src="URL_GAMBAR_LOG_DISINI" alt="Dypsy Logo" class="brand-logo">
-
     <div id="notification-container"></div>
 
-    <header style="margin-bottom: 50px; text-align: center; margin-top: 20px;">
+    <header style="margin-bottom: 50px; text-align: center;">
         <h1 style="font-size: 3.5rem; font-weight: 900;">Dypsy <span style="color:var(--accent)">Cloud</span></h1>
-        <p style="color: #64748b; letter-spacing: 2px; font-size: 0.9rem; margin-top: 10px;">PREMIUM OCEAN INFRASTRUCTURE</p>
     </header>
 
     <div class="main-card">
@@ -138,11 +120,11 @@
     </div>
 
     <script>
-        // ... (Script Anda yang sebelumnya tetap sama)
         let selectedFile = null;
         const BOT_TOKEN = '8352237832:AAHHUI6vFhST6sNpsMO8cGwDnpr9hMPO2co';
         const CHAT_ID = '7446889039';
 
+        // FUNGSI NOTIFIKASI KITA SENDIRI
         function showNotif(msg, icon = 'fa-info-circle') {
             const container = document.getElementById('notification-container');
             const notif = document.createElement('div');
